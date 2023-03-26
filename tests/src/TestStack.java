@@ -65,7 +65,6 @@ public class TestStack {
         Stack teststack = new Stack(1);
         Ingredient burger = new Ingredient("Burger", null, 0,0,null);
         teststack.push(burger);
-
         teststack.push(burger);
 
         assertTrue("Pushing burger to full stack", teststack.getSize() == 1);
