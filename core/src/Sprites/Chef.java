@@ -267,6 +267,7 @@ public class Chef extends Sprite {
                 float speed_multiplier = 1;
 
                 if (Gdx.input.isKeyPressed(Input.Keys.W)) {
+                    System.out.println("BIG W");
                     yVelocity += 0.5f * speed_multiplier;
                 }
                 if (Gdx.input.isKeyPressed(Input.Keys.A)) {

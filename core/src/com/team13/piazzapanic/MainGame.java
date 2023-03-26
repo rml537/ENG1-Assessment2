@@ -41,8 +41,8 @@ public class MainGame extends Game {
 	}
 	@Override
 	public void create() {
-		batch = new SpriteBatch();
-		startScreen = new StartScreen(this);
+//		batch = new SpriteBatch();
+//		startScreen = new StartScreen(this);
 		playScreen = new PlayScreen(this);
 	}
 
@@ -65,4 +65,5 @@ public class MainGame extends Game {
 		super.dispose();
 		batch.dispose();
 	}
+
 }

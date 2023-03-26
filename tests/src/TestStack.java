@@ -68,8 +68,6 @@ public class TestStack {
 
         teststack.push(burger);
 
-
-
         assertTrue("Pushing burger to full stack", teststack.getSize() == 1);
 
     }
@@ -81,12 +79,6 @@ public class TestStack {
         assertTrue("Popping from empty stack", teststack.pop() == null);
     }
 
-//    @Test
-//    public void TestInvalidStackSize(){
-//        Stack teststack = new Stack(-1);
-//        //      Fails due to an negative array size exception
-//        assertTrue("Initializing a stack with -1 size", teststack == null);
-//    }
 
 
 

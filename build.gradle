@@ -73,6 +73,7 @@ project(":tests") {
 
     dependencies {
 
+        api "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
         implementation project(":core")
 
         implementation "junit:junit:4.+"

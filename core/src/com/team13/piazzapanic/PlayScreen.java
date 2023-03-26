@@ -55,8 +55,8 @@ public class PlayScreen implements Screen {
     private final OrthogonalTiledMapRenderer renderer;
 
     private final World world;
-    private final Chef chef1;
-    private final Chef chef2;
+    public final Chef chef1;
+    public final Chef chef2;
 
     private Chef controlledChef;
 
@@ -92,6 +92,34 @@ public class PlayScreen implements Screen {
      * creates and initializes world, creates and initializes chefs and sets them, sets contact listener for world, and initializes ordersArray.
      * @param game The MainGame instance that the PlayScreen will be a part of.
      */
+
+    public PlayScreen(MainGame game, boolean headless){
+        this.game = game;
+        scenarioComplete = Boolean.FALSE;
+        createdOrder = Boolean.FALSE;
+        gamecam = null;
+        gameport = null;
+        hud = null;
+        renderer = null;
+
+
+        TmxMapLoader mapLoader = new TmxMapLoader(new InternalFileHandleResolver());
+        map = mapLoader.load("NewKitchen.tmx");
+        world = new World(new Vector2(0,0), true);
+        b2world =  new B2WorldCreator(world, map, this);
+        tile_objects = b2world.getTiles();
+        chef1 = new Chef(this.world, 31.5F,65);
+        chef2 = new Chef(this.world, 128,65);
+        customers[0] = new Customer( difficulty, 60);
+        customers[1] = new Customer( difficulty, 60);
+        last_customer = 2;
+        customer1 = new Customer( null, 100);
+        controlledChef = chef1;
+        world.setContactListener(new WorldContactListener());
+        controlledChef.notificationSetBounds("Down");
+        ordersArray = new ArrayList<>();
+
+    }
 
     public PlayScreen(MainGame game){
         this.game = game;
